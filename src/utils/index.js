@@ -4,5 +4,5 @@ export const formatNumber = (number) => {
 };
 
 export const truncateDescriptionText = (text) => {
-	return `${text.slice(0, 100)} ...`;
+	return `${text.slice(0, 85)} ...`;
 };

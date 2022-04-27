@@ -34,7 +34,7 @@ export default function SidebarLayout({ children }) {
 					<div className='flex flex-col flex-1 mt-8'>
 						<nav className=''>
 							{navigation.map((el) => (
-								<div className='hover:bg-secondary p-6'>
+								<div key={el.name} className='hover:bg-secondary p-6'>
 									<a href='/'>
 										<el.icon className='h-8 w-8 text-white mx-auto' />
 									</a>

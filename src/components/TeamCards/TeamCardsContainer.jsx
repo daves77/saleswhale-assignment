@@ -5,7 +5,7 @@ import TeamCard from './TeamCard';
 export default function TeamCardsContainer({ teams }) {
 	return (
 		<div className='bg-white'>
-			<div className='flex justify-between items-center border-b border-slate-100 p-4'>
+			<div className='flex justify-between items-center border-b border-slate-100 p-8 py-6'>
 				<div>
 					<h2 className='font-medium text-lg'>All Teams</h2>
 				</div>
@@ -13,7 +13,7 @@ export default function TeamCardsContainer({ teams }) {
 					Showing 65 out of 65 teams
 				</div>
 			</div>
-			<div className='grid grid-cols-3 p-4 gap-4'>
+			<div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  p-8 gap-4'>
 				{/* cards */}
 				{teams.map((team) => (
 					<TeamCard key={team.name} team={team} />

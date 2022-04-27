@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TeamCardsContainer from '../components/TeamCards/TeamCardsContainer';
+import ActivityCardsContainer from '../components/ActivityCards/ActivityCardsContainer';
 
 const response = {
 	teams: [
@@ -152,6 +153,7 @@ const response = {
 			},
 			action: 'archived_team',
 			target: 'Uber',
+			created_at: '2 hours ago',
 		},
 		{
 			id: 4,
@@ -205,7 +207,9 @@ export default function TeamsDashboard() {
 						<div className='col-span-9'>
 							<TeamCardsContainer teams={response.teams} />
 						</div>
-						<div className='col-span-3'>activity feed</div>
+						<div className='col-span-3'>
+							<ActivityCardsContainer activities={response.activities} />
+						</div>
 					</div>
 				</div>
 			</div>
