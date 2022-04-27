@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import {
+	OfficeBuildingIcon,
+	PlusIcon,
+	SearchIcon,
+} from '@heroicons/react/solid';
 
 import TeamCardsContainer from '../components/TeamCards/TeamCardsContainer';
 import ActivityCardsContainer from '../components/ActivityCards/ActivityCardsContainer';
+import { joinClasses } from '../utils';
 
 const response = {
 	teams: [
@@ -189,23 +195,81 @@ const response = {
 	},
 };
 
-console.log(response);
+const tabsDefault = [
+	{ id: 1, name: 'All', ref: 'all' },
+	{ id: 2, name: 'Favorites', ref: 'favorites' },
+	{ id: 3, name: 'Archived', ref: 'archived' },
+];
+
 export default function TeamsDashboard() {
+	const [currTab, setCurrTab] = useState('all');
+	const [currTeams, setCurrTeams] = useState([]);
+
+	useEffect(() => {
+		let teams = response.teams;
+		switch (currTab) {
+			case 'all':
+				break;
+			case 'favorites':
+				teams = teams.filter((team) => team.is_favorited);
+				break;
+			case 'archived':
+				teams = teams.filter((team) => team.is_archived);
+				break;
+			default:
+				break;
+		}
+		setCurrTeams(teams);
+	}, [currTab]);
+
 	return (
 		<div>
 			<div className='bg-gray h-screen'>
-				<div className='p-12'>
-					<div>
-						<div className='flex justify-between'>
-							<div>
-								<div className='text-3xl'>Teams</div>
-							</div>
-							<div>button</div>
+				<div className='bg-white px-12'>
+					<div className='flex justify-between items-center py-8'>
+						<div className='flex items-center '>
+							<OfficeBuildingIcon className=' text-slate-400 h-12 w-12 mr-2' />
+							<h2 className='text-4xl'>Teams</h2>
+						</div>
+						<div>
+							<button className='px-2 py-1 flex items-center text-sm text-white rounded bg-success'>
+								<PlusIcon className='h-8 w-8 mr-4' />
+								CREATE NEW TEAM
+							</button>
 						</div>
 					</div>
-					<div className='grid grid-cols-1 md:grid-cols-12 gap-8'>
+					<div className='flex justify-between'>
+						<div className='flex'>
+							{tabsDefault.map((tab) => (
+								<div
+									key={tab.id}
+									onClick={() => setCurrTab(tab.ref)}
+									className={joinClasses(
+										'px-3 py-1 border-b-2 mr-1',
+										tab.ref === currTab
+											? 'text-secondary border-secondary'
+											: 'hover:border-secondary hover:text-secondary border-transparent cursor-pointer'
+									)}>
+									{tab.name}
+								</div>
+							))}
+						</div>
+						<div className='relative'>
+							<div className='absolute -left-6 bottom-3  pointer-events-none'>
+								<SearchIcon className='h-5 w-5 text-slate-400' />
+							</div>
+							<input
+								type='text'
+								placeholder='Search team name'
+								className='focus:outline-none'
+							/>
+						</div>
+					</div>
+				</div>
+				<div className=''>
+					<div className='grid grid-cols-1 md:grid-cols-12 gap-8 p-12'>
 						<div className='col-span-9'>
-							<TeamCardsContainer teams={response.teams} />
+							<TeamCardsContainer teams={currTeams} />
 						</div>
 						<div className='col-span-3'>
 							<ActivityCardsContainer activities={response.activities} />
