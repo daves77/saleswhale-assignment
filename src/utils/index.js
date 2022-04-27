@@ -4,5 +4,9 @@ export const formatNumber = (number) => {
 };
 
 export const truncateDescriptionText = (text) => {
-	return `${text.slice(0, 85)} ...`;
+	return `${text.slice(0, 75)} ...`;
+};
+
+export const joinClasses = (...classes) => {
+	return classes.filter(Boolean).join(' ');
 };

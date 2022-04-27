@@ -2,21 +2,20 @@ import React from 'react';
 
 import images from '../assets/images';
 import {
-	BellIcon,
-	CalendarIcon,
-	ChartBarIcon,
-	FolderIcon,
-	HomeIcon,
-	InboxIcon,
-	MenuAlt2Icon,
+	OfficeBuildingIcon,
 	UsersIcon,
-	XIcon,
+	ChatAlt2Icon,
+	GlobeAltIcon,
+	QuestionMarkCircleIcon,
 } from '@heroicons/react/solid';
 
+import { joinClasses } from '../utils';
+
 const navigation = [
-	{ name: 'message', icon: HomeIcon, current: false },
-	{ name: 'teams', icon: UsersIcon, current: true },
-	{ name: 'user', icon: InboxIcon, current: false },
+	{ name: 'message', icon: ChatAlt2Icon, current: false },
+	{ name: 'teams', icon: OfficeBuildingIcon, current: true },
+	{ name: 'user', icon: UsersIcon, current: false },
+	{ name: 'globe', icon: GlobeAltIcon, current: false },
 ];
 
 export default function SidebarLayout({ children }) {
@@ -31,16 +30,31 @@ export default function SidebarLayout({ children }) {
 							alt='Narwhal'
 						/>
 					</div>
-					<div className='flex flex-col flex-1 mt-8'>
+					<div className='flex flex-col justify-between flex-1 mt-8'>
 						<nav className=''>
 							{navigation.map((el) => (
-								<div key={el.name} className='hover:bg-secondary p-6'>
+								<div
+									key={el.name}
+									className={joinClasses(
+										'p-6 text-white',
+										el.current
+											? 'bg-secondary'
+											: 'hover:bg-secondary cursor-pointer'
+									)}>
 									<a href='/'>
-										<el.icon className='h-8 w-8 text-white mx-auto' />
+										<el.icon
+											className={joinClasses(
+												'h-8 w-8  mx-auto',
+												el.current ? 'cursor-default' : 'opacity-30 '
+											)}
+										/>
 									</a>
 								</div>
 							))}
 						</nav>
+						<a href='/' className='mb-8'>
+							<QuestionMarkCircleIcon className='h-8 w-8 text-white opacity-30 mx-auto' />
+						</a>
 					</div>
 				</div>
 			</div>

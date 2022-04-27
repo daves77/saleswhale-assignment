@@ -2,12 +2,20 @@ import React from 'react';
 import { StarIcon } from '@heroicons/react/outline';
 import { ChatAlt2Icon, UsersIcon } from '@heroicons/react/solid';
 
-import { formatNumber, truncateDescriptionText } from '../../utils';
+import {
+	formatNumber,
+	truncateDescriptionText,
+	joinClasses,
+} from '../../utils';
 
 export default function TeamCards({ team }) {
 	return (
 		<div className='col-span-1'>
-			<div className='border rounded border-slate-200 h-full'>
+			<div
+				className={joinClasses(
+					'border rounded border-slate-200 h-full  cursor-pointer',
+					team.is_archived ? 'bg-slate-100 ' : 'bg-white hover:border-primary'
+				)}>
 				<div className='border-b-slate-200 border-b p-4'>
 					<div className='flex gap-3 h-full'>
 						<div className=' h-9 w-9'>
@@ -20,7 +28,14 @@ export default function TeamCards({ team }) {
 							</div>
 						</div>
 						<div className='ml-auto'>
-							<StarIcon className='h-4 w-4 hover:fill-current text-slate-300 hover:text-yellow-400' />
+							<StarIcon
+								className={joinClasses(
+									'h-4 w-4',
+									team.is_favorited
+										? 'fill-current text-yellow-400'
+										: 'hover:fill-current text-slate-300 hover:text-yellow-400'
+								)}
+							/>
 						</div>
 					</div>
 					<div className='mt-4'>

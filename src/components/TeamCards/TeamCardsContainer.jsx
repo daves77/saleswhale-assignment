@@ -4,13 +4,13 @@ import TeamCard from './TeamCard';
 
 export default function TeamCardsContainer({ teams }) {
 	return (
-		<div className='bg-white'>
-			<div className='flex justify-between items-center border-b border-slate-100 p-8 py-6'>
+		<div className='bg-white shadow-lg'>
+			<div className='flex justify-between items-center border-b border-slate-100 p-8 py-6 cursor-pointer '>
 				<div>
 					<h2 className='font-medium text-lg'>All Teams</h2>
 				</div>
 				<div className='text-xs font-light text-slate-400'>
-					Showing 65 out of 65 teams
+					Showing {teams.length} out of {teams.length} teams
 				</div>
 			</div>
 			<div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  p-8 gap-4'>
