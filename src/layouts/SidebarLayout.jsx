@@ -1,6 +1,5 @@
 import React from 'react';
 
-import images from '../assets/images';
 import {
 	OfficeBuildingIcon,
 	UsersIcon,
@@ -8,6 +7,9 @@ import {
 	GlobeAltIcon,
 	QuestionMarkCircleIcon,
 } from '@heroicons/react/solid';
+
+import images from '../assets/images';
+import Navbar from '../components/Navbar/Navbar';
 
 import { joinClasses } from '../utils';
 
@@ -58,7 +60,7 @@ export default function SidebarLayout({ children }) {
 					</div>
 				</div>
 			</div>
-
+			<Navbar />
 			<div className='md:pl-20 flex flex-col flex-1'>{children}</div>
 		</>
 	);

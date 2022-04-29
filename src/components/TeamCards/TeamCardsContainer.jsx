@@ -5,7 +5,7 @@ import TeamCard from './TeamCard';
 export default function TeamCardsContainer({ teams }) {
 	return (
 		<div className='bg-white shadow-lg'>
-			<div className='flex justify-between items-center border-b border-slate-100 p-8 py-6 cursor-pointer '>
+			<div className='flex justify-between items-center border-b border-slate-100 p-8 py-6'>
 				<div>
 					<h2 className='font-medium text-lg'>All Teams</h2>
 				</div>

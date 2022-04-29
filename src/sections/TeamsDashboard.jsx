@@ -227,13 +227,13 @@ export default function TeamsDashboard() {
 			<div className='bg-gray h-screen'>
 				<div className='bg-white px-12'>
 					<div className='flex justify-between items-center py-8'>
-						<div className='flex items-center '>
-							<OfficeBuildingIcon className=' text-slate-400 h-12 w-12 mr-2' />
+						<div className='flex items-center justify-between'>
+							<OfficeBuildingIcon className=' text-slate-400 h-12 w-12' />
 							<h2 className='text-4xl'>Teams</h2>
 						</div>
 						<div>
-							<button className='px-2 py-1 flex items-center text-sm text-white rounded bg-success'>
-								<PlusIcon className='h-8 w-8 mr-4' />
+							<button className='p-2 flex items-center text-sm text-white rounded bg-success'>
+								<PlusIcon className='h-6 w-6 mr-4' />
 								CREATE NEW TEAM
 							</button>
 						</div>
