@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
 import { MenuAlt2Icon } from '@heroicons/react/outline';
 
 import ProfileAvatar from './ProfileAvatar';
 import Messages from './Messages';
-
-const user = {
-	id: 4,
-	name: 'John',
-	avatar:
-		'https://d1bb37ap2qun5z.cloudfront.net/profiles/profile_avatars/000/000/001/display/shimakaze-desu.jpg?1396709040',
-	notifications_count: 5,
-};
+import { Context } from '../../store';
 
 export default function Navbar({ setIsOpen }) {
+	const { store } = useContext(Context);
+	const { user } = store;
+
 	return (
 		<div className='md:pl-20 border-b border-b-slate-200'>
 			<div className='flex justify-between px-4 md:px-12 '>

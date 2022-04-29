@@ -105,7 +105,9 @@ export default function SidebarLayout({ children }) {
 				</div>
 			</div>
 			<Navbar setIsOpen={setIsOpen} />
-			<div className='md:pl-20 flex flex-col flex-1'>{children}</div>
+			<div className='md:pl-20 flex flex-col flex-1 bg-gray h-screen'>
+				{children}
+			</div>
 		</>
 	);
 }

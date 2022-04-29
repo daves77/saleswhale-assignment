@@ -1,14 +1,33 @@
-import React from 'react';
-import { StarIcon } from '@heroicons/react/outline';
+import React, { useContext } from 'react';
+import { StarIcon, DotsVerticalIcon } from '@heroicons/react/outline';
 import { ChatAlt2Icon, UsersIcon } from '@heroicons/react/solid';
 
+import {
+	Context,
+	toggleFavoriteTeamAction,
+	toggleArchiveTeamAction,
+} from '../../store';
 import {
 	formatNumber,
 	truncateDescriptionText,
 	joinClasses,
 } from '../../utils';
+import useClickOutside from '../hooks/useClickOutside';
 
 export default function TeamCards({ team }) {
+	const { store, dispatch } = useContext(Context);
+	const [isOpen, setIsOpen, dropdownRef] = useClickOutside();
+
+	const handleToggleFavorite = (team) => {
+		team.is_favorited = !team.is_favorited;
+		dispatch(toggleFavoriteTeamAction(team));
+	};
+
+	const handleToggleArchive = (team) => {
+		team.is_archived = !team.is_archived;
+		dispatch(toggleArchiveTeamAction(team));
+	};
+
 	return (
 		<div className='col-span-1'>
 			<div
@@ -27,15 +46,33 @@ export default function TeamCards({ team }) {
 								Created {team.created_at}
 							</div>
 						</div>
-						<div className='ml-auto'>
-							<StarIcon
-								className={joinClasses(
-									'h-4 w-4',
-									team.is_favorited
-										? 'fill-current text-yellow-400'
-										: 'hover:fill-current text-slate-300 hover:text-yellow-400'
+						<div className='ml-auto flex items-start'>
+							<button onClick={() => handleToggleFavorite(team)}>
+								<StarIcon
+									className={joinClasses(
+										'h-4 w-4 mt-0.5',
+										team.is_favorited
+											? 'fill-current text-yellow-400'
+											: 'hover:fill-current text-slate-300 hover:text-yellow-400'
+									)}
+								/>
+							</button>
+							<div className='relative'>
+								<button onClick={() => setIsOpen(!isOpen)}>
+									<DotsVerticalIcon className='h-4 w-4 text-slate-300 hover:text-slate-500' />
+								</button>
+								{isOpen && (
+									<div className='absolute right-0' ref={dropdownRef}>
+										<div
+											className='bg-white shadow-lg p-2 px-6 rounded hover:bg-slate-50'
+											onClick={() => handleToggleArchive(team)}>
+											<div className='text-slate-700'>
+												{team.is_archived ? 'Unarchive' : 'Archive'}
+											</div>
+										</div>
+									</div>
 								)}
-							/>
+							</div>
 						</div>
 					</div>
 					<div className='mt-4'>
