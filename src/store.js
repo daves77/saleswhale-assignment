@@ -52,6 +52,7 @@ const data = {
 			leads_count: 2000,
 			is_favorited: false,
 			is_archived: false,
+			created_at: '2 October 2018',
 		},
 		{
 			id: 5,
@@ -64,6 +65,7 @@ const data = {
 			leads_count: 1500,
 			is_favorited: false,
 			is_archived: false,
+			created_at: '3 October 2018',
 		},
 		{
 			id: 6,
@@ -76,6 +78,7 @@ const data = {
 			leads_count: 10000,
 			is_favorited: true,
 			is_archived: false,
+			created_at: '1 September 2018',
 		},
 		{
 			id: 7,
@@ -88,6 +91,7 @@ const data = {
 			leads_count: 1200,
 			is_favorited: true,
 			is_archived: false,
+			created_at: '2 June 2018',
 		},
 		{
 			id: 8,
@@ -100,6 +104,7 @@ const data = {
 			leads_count: 3200,
 			is_favorited: false,
 			is_archived: true,
+			created_at: '2 July 2018',
 		},
 		{
 			id: 9,
@@ -112,6 +117,7 @@ const data = {
 			leads_count: 2000,
 			is_favorited: false,
 			is_archived: true,
+			created_at: '6 July 2018',
 		},
 	],
 	activities: [
