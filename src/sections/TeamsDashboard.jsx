@@ -224,21 +224,21 @@ export default function TeamsDashboard() {
 
 	return (
 		<div>
-			<div className='bg-gray h-screen'>
-				<div className='bg-white px-12'>
+			<div className='bg-gray'>
+				<div className='bg-white px-4 md:px-12'>
 					<div className='flex justify-between items-center py-8'>
 						<div className='flex items-center justify-between'>
-							<OfficeBuildingIcon className=' text-slate-400 h-12 w-12' />
-							<h2 className='text-4xl'>Teams</h2>
+							<OfficeBuildingIcon className=' text-slate-400 sm:h-12 sm:w-12 h-8 w-8' />
+							<h2 className='text-2xl sm:text-4xl'>Teams</h2>
 						</div>
 						<div>
-							<button className='p-2 flex items-center text-sm text-white rounded bg-success'>
-								<PlusIcon className='h-6 w-6 mr-4' />
+							<button className='p-2 flex items-center text-xs sm:text-sm text-white rounded bg-success hover:bg-teal-700'>
+								<PlusIcon className='h-4 w-4 sm:h-6 sm:w-6 sm:mr-4 mr-1' />
 								CREATE NEW TEAM
 							</button>
 						</div>
 					</div>
-					<div className='flex justify-between'>
+					<div className='flex items-center md:justify-between flex-col md:flex-row'>
 						<div className='flex'>
 							{tabsDefault.map((tab) => (
 								<div
@@ -254,8 +254,8 @@ export default function TeamsDashboard() {
 								</div>
 							))}
 						</div>
-						<div className='relative'>
-							<div className='absolute -left-6 bottom-3  pointer-events-none'>
+						<div className='relative my-6 md:my-0'>
+							<div className='absolute -left-6 bottom-0.5  pointer-events-none'>
 								<SearchIcon className='h-5 w-5 text-slate-400' />
 							</div>
 							<input
@@ -267,11 +267,11 @@ export default function TeamsDashboard() {
 					</div>
 				</div>
 				<div className=''>
-					<div className='grid grid-cols-1 md:grid-cols-12 gap-8 p-12'>
-						<div className='col-span-9'>
+					<div className='grid grid-cols-1 xl:grid-cols-12 gap-8 p-4 md:p-12'>
+						<div className='col-span-1 xl:col-span-9'>
 							<TeamCardsContainer teams={currTeams} />
 						</div>
-						<div className='col-span-3'>
+						<div className='col-span-1 xl:col-span-3'>
 							<ActivityCardsContainer activities={response.activities} />
 						</div>
 					</div>

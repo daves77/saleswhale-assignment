@@ -8,6 +8,9 @@ module.exports = {
 				secondary: '#2995DA',
 				success: '#40D2BF',
 			},
+			fontSize: {
+				xxs: '8px',
+			},
 		},
 	},
 	variants: {

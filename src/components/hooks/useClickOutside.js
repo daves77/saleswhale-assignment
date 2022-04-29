@@ -1,15 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 
-// mainly used to open and close dropdown menus
+// mainly used to isOpen and close dropdown menus
 // closes menu if user clicks outside of the menu
 export default function useClickOutside() {
-	const [open, setOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(false);
 	const ref = useRef();
 
 	useEffect(() => {
 		const handleClick = (event) => {
 			if (ref.current && !ref.current.contains(event.target)) {
-				setOpen(false);
+				setIsOpen(false);
 			}
 		};
 		document.addEventListener('mousedown', handleClick);
@@ -18,5 +18,5 @@ export default function useClickOutside() {
 		};
 	}, [ref]);
 
-	return [open, setOpen, ref];
+	return [isOpen, setIsOpen, ref];
 }
