@@ -2,6 +2,8 @@
 ---
 Visit the deployed demo app @ [https://david-saleswhale-assignment.herokuapp.com/](https://david-saleswhale-assignment.herokuapp.com/)
 
+<img width="1908" alt="Screenshot 2022-04-30 at 8 07 50 PM" src="https://user-images.githubusercontent.com/54523780/166104913-c9bc498c-fd10-4d43-8319-936c53efb54b.png">
+
 ## Technologies Used
 - [React (Create React App)]()
 - [TailwindCSS]() 
@@ -31,6 +33,7 @@ npm install
 ```
 npm start
 ```
+
 
 
 ## Contact
