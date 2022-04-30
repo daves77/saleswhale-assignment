@@ -1,4 +1,4 @@
-import NarwhaleIcon from './icons/narwhale.png';
+import NarwhaleIcon from './logo/narwhale.png';
 
 const images = {
 	NarwhaleIcon,

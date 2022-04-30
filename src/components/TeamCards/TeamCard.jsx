@@ -15,7 +15,7 @@ import {
 import useClickOutside from '../hooks/useClickOutside';
 
 export default function TeamCards({ team }) {
-	const { store, dispatch } = useContext(Context);
+	const { dispatch } = useContext(Context);
 	const [isOpen, setIsOpen, dropdownRef] = useClickOutside();
 
 	const handleToggleFavorite = (team) => {

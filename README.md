@@ -1,13 +1,12 @@
 # Saleswhale Frontend Engineering Assignment
 ---
+Visit the deployed demo app @ [https://david-saleswhale-assignment.herokuapp.com/](https://david-saleswhale-assignment.herokuapp.com/)
 
 ## Technologies Used
 - [React (Create React App)]()
 - [TailwindCSS]() 
 
-
-
-## How to run
+## How to run locally
 To get a local version of the demo application up, follow these example steps.
 
 #### Prerequsites
