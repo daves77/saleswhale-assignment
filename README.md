@@ -1,8 +1,8 @@
 # Saleswhale Frontend Engineering Assignment
 ---
-Visit the deployed demo app @ [https://david-saleswhale-assignment.herokuapp.com/](https://david-saleswhale-assignment.herokuapp.com/)
-Link to Dropbox: [here](https://www.dropbox.com/s/bs8517cmnt3c9op/sales-whale-assignment.zip?dl=0)
-Link to Github: [here](https://github.com/daves77/saleswhale-assignment)
+1. Visit the deployed demo app @ [https://david-saleswhale-assignment.herokuapp.com/](https://david-saleswhale-assignment.herokuapp.com/)
+2. Link to Dropbox: [here](https://www.dropbox.com/s/bs8517cmnt3c9op/sales-whale-assignment.zip?dl=0)
+3. Link to Github: [here](https://github.com/daves77/saleswhale-assignment)
 ---
 <img width="1908" alt="Screenshot 2022-04-30 at 8 07 50 PM" src="https://user-images.githubusercontent.com/54523780/166104913-c9bc498c-fd10-4d43-8319-936c53efb54b.png">
 
